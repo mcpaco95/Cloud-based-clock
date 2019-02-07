@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Custom Javascript -->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <title>Responsive Cloud-based Clock</title>
+</head>
+
+<body onload="init()">
+    <h5 class="myName">Francisco Marlasca Couoh - 151555</h5>
+    <div class="container">
+        <h1 class="myTitle">Cloud-based Clock</h1>
+        <div class="myTitle">
+            <button type="button" class="btn btn-outline-light" onclick="showModal()">Add second server</button>
+        </div>
+        <div class="row rowPadding">
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="myTitle">Client time</h3>
+                <p class="myTitle clock" id="clientClock">time</p>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="myTitle">Server time</h3>
+                <p class="myTitle clock" id="serverClock">Loading...</p>
+                <p class="myTitle clock hide" id="serverClock2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true" id="modificarRefaccion">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add time</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <p>URL:</p>
+                        </div>
+                        <div class="col-9"><input autocomplete="off" type="text" class="form-control" id="urlInput"
+                                placeholder="(localhost:3030)"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" onclick="getSecondServerTime()">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="https://github.com/mcpaco95/Responsive-Cloud-based-Clock" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-2x fa-github"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
